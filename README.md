@@ -111,44 +111,26 @@ PATCH: 変更する属性のみ送信（`{“name”: “新しい名前”}`）
 ### 5.1 ステータスコード
 
 | コード | 説明 | 使用例 |
-
 |----|----|----|
-
 | 200 | OK | リクエスト成功（GET, PUT, PATCH） |
-
 | 201 | Created | リソース作成成功（POST） |
-
 | 204 | No Content | リクエスト成功、返すコンテンツなし（DELETE） |
-
 | 400 | Bad Request | リクエスト形式が不正 |
-
 | 401 | Unauthorized | 認証が必要 |
-
 | 403 | Forbidden | 認証済みだが権限がない |
-
 | 404 | Not Found | リソースが存在しない |
-
 | 429 | Too Many Requests | レート制限超過 |
-
 | 500 | Internal Server Error | サーバー内部エラー |
 
 ### 5.2 エラーレスポンス形式
 
 ```json
-
 {
-
-“error”: {
-
-"code": "RESOURCE_NOT_FOUND",
-
-"message": "指定されたユーザーは存在しません"
-
-
+  "error": {
+    "code": "RESOURCE_NOT_FOUND",
+    "message": "指定されたユーザーは存在しません"
+  }
 }
-
-}
-
 ```
 
 ### 5.3 成功レスポンス形式
@@ -156,20 +138,17 @@ PATCH: 変更する属性のみ送信（`{“name”: “新しい名前”}`）
 - 単一リソース
 
 ```json
-
 {
   "id": "user123",
   "name": "山田太郎",
   "email": "yamada@example.com",
   "createdAt": "2023-01-15T12:00:00Z"
 }
-
 ```
 
 - リソースコレクション
 
 ```json
-
 {
   "items": [
     {
@@ -201,14 +180,12 @@ PATCH: 変更する属性のみ送信（`{“name”: “新しい名前”}`）
 
 
 ```json
-
 {
   "id": "user789",
   "name": "鈴木花子",
   "email": "suzuki@example.com",
   "createdAt": "2023-01-15T12:00:00Z"
 }
-
 ```
 
 - アクション実行の場合:
